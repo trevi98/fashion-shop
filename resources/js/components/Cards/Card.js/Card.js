@@ -2,19 +2,15 @@ import React, { useState } from "react";
 import img from "../../../images/he16088he0061-2.png";
 import Rate from "../../Rate/Rate";
 import "./Card.css";
-import { useHistory, useLocation, Link } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 function Card() {
-    const history = useHistory();
     const location = useLocation();
 
     return (
-        <div
-            className="card"
-            onClick={() => {
-                history.push("/product");
-            }}
-        >
-            <img src={img} />
+        <div className="card">
+            <Link to="/product">
+                <img src={img} />
+            </Link>
             <div className="content">
                 <p>
                     A-Line/Princess Chiffon Lace V-neck Sleeveless Floor-Length

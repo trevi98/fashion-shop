@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { Component, useState } from "react";
 import america from "../../images/america-flag-ic.png";
 import AS from "../../images/307307350_53880.png";
-import { useHistory, useLocation, Link } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 
 import {
     AiFillCaretDown,
@@ -50,19 +50,21 @@ export default function Navbar({ signIn }) {
                         />
                     )}
                 </div>
-                <AiOutlineUser
-                    onClick={() => {
-                        setToggleMenu(false);
-                        history.push("/auth");
-                    }}
-                />
-                <div className="icon-container">
-                    <AiOutlineShoppingCart
+                <Link to="/auth">
+                    <AiOutlineUser
                         onClick={() => {
                             setToggleMenu(false);
-                            history.push("/cart");
                         }}
                     />
+                </Link>
+                <div className="icon-container">
+                    <Link to="/cart">
+                        <AiOutlineShoppingCart
+                            onClick={() => {
+                                setToggleMenu(false);
+                            }}
+                        />
+                    </Link>
                     <div className="amount-counter">
                         <p>0</p>
                     </div>
@@ -101,7 +103,6 @@ export default function Navbar({ signIn }) {
     const [lang, setLang] = useState(false);
     const [toggleMenu, setToggleMenu] = useState(false);
     const [search, setSearch] = useState(false);
-    const history = useHistory();
     const location = useLocation();
     const register = () => {
         setToggleMenu((prev) => !prev);

@@ -6,15 +6,31 @@ import Cards from "../Cards/Cards";
 import ShowMore from "../ShowMore/ShowMore";
 import PaginatedItems from "../Pagination";
 function Home() {
-    let init = {
-        PRICE: false,
-        SHOWN: false,
-        FABRIC: false,
-        SLEEVE: false,
-    };
-    const [toggleArrow, setToggleArrow] = useState(init);
     const [toggleMenu, setToggleMenu] = useState(false);
     const handelSubmit = () => {};
+    const Nav2 = () => {
+        return (
+            <ul>
+                <li>
+                    <a href="#">PRICE LOW TO HIGH</a>
+                    <AiFillCaretDown color="#000000" />
+                </li>
+                <li>
+                    <a href="#">SHOWN COLOR</a>
+                    <AiFillCaretDown color="#000000" />
+                </li>
+                <li>
+                    <a href="#">FABRIC</a>
+
+                    <AiFillCaretDown color="#000000" />
+                </li>
+                <li name="SLEEVE">
+                    <a href="#">SLEEVE</a>
+                    <AiFillCaretDown color="#000000" />
+                </li>
+            </ul>
+        );
+    };
     return (
         <div className="home">
             <div className="links">
@@ -38,72 +54,13 @@ function Home() {
                             }}
                         />
                     )}
-                    {/* {toggleMenu && (
-                    )} */}
+                    {toggleMenu && (
+                        <div className="nav2 scale-up-center">
+                            <Nav2 />
+                        </div>
+                    )}
                 </div>
-                <ul>
-                    <li
-                        onClick={() =>
-                            setToggleArrow({
-                                ...toggleArrow,
-                                PRICE: !toggleArrow.PRICE,
-                            })
-                        }
-                    >
-                        <a href="#">PRICE LOW TO HIGH</a>
-                        {toggleArrow.PRICE ? (
-                            <AiFillCaretRight color="#000000" />
-                        ) : (
-                            <AiFillCaretDown color="#000000" />
-                        )}
-                    </li>
-                    <li
-                        onClick={() =>
-                            setToggleArrow({
-                                ...toggleArrow,
-                                PRICE: !toggleArrow.PRICE,
-                            })
-                        }
-                    >
-                        <a href="#">SHOWN COLOR</a>
-                        {toggleArrow.SHOWN ? (
-                            <AiFillCaretRight color="#000000" />
-                        ) : (
-                            <AiFillCaretDown color="#000000" />
-                        )}
-                    </li>
-                    <li
-                        onClick={() =>
-                            setToggleArrow({
-                                ...toggleArrow,
-                                FABRIC: !toggleArrow.FABRIC,
-                            })
-                        }
-                    >
-                        <a href="#">FABRIC</a>
-                        {toggleArrow.FABRIC ? (
-                            <AiFillCaretRight color="#000000" />
-                        ) : (
-                            <AiFillCaretDown color="#000000" />
-                        )}
-                    </li>
-                    <li
-                        onClick={() =>
-                            setToggleArrow({
-                                ...toggleArrow,
-                                SLEEVE: !toggleArrow.SLEEVE,
-                            })
-                        }
-                        name="SLEEVE"
-                    >
-                        <a href="#">SLEEVE</a>
-                        {toggleArrow.SLEEVE ? (
-                            <AiFillCaretRight color="#000000" />
-                        ) : (
-                            <AiFillCaretDown color="#000000" />
-                        )}
-                    </li>
-                </ul>
+                <Nav2 />
                 <div className="popular">
                     <p>MOST POPULAR</p>
                     <AiFillCaretDown color="#000000" />

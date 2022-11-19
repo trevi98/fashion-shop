@@ -53,7 +53,7 @@
     padding-top: 3rem;
 }
 .modal .container .content form .ask-submit button {
-    background-color: #000000;
+    background-color: var(--main-color);
     padding: 1rem 0.5rem;
     color: #fff;
     font-size: 20px;
@@ -79,6 +79,16 @@
 }
 @media screen and (max-width: 650px) {
     .ReactModal__Content {
-        width: 350px;
+        width: 300px;
+    }
+    .modal .container {
+        flex-direction: column;
+    }
+    .modal .container .content form .ask-submit button {
+        padding: 0.5rem;
+        font-size: 18px;
+    }
+    .modal .container .content form .ask-input label {
+        font-size: 15px;
     }
 }

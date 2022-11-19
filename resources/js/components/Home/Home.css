@@ -17,6 +17,23 @@
 .home .menu {
     display: none;
 }
+.home .menu svg {
+    cursor: pointer;
+}
+.home .menu .nav2 {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    flex-direction: column;
+    position: absolute;
+    margin-top: 1.3rem;
+    background-color: #2120205e;
+    border-radius: 5px;
+    padding: 2rem;
+    text-align: end;
+    box-shadow: 0 0 5 rgba(0, 0, 0, 0.2);
+    min-width: 230px;
+}
 .home .links ul {
     display: flex;
     justify-content: flex-start;
@@ -115,6 +132,13 @@
     }
     .home .menu {
         display: block;
+    }
+    .home .menu .nav2 ul {
+        display: flex;
+        flex-direction: column;
+    }
+    .home .menu .nav2 ul li {
+        margin: 1rem 0;
     }
     .home .title {
         font-size: 18px;
